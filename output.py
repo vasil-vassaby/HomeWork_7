@@ -1,3 +1,8 @@
+import colorama
+from colorama import Fore, Style
+
+colorama.init()
+
 menu = [
     'Открыть файл',
     'Показать все контакты',
@@ -11,6 +16,7 @@ menu = [
 
 def print_menu():
     global menu
+    print('____ ТЕЛЕФОННЫЙ СПРАВОЧНИК ____')
     print('======== ГЛАВНОЕ МЕНЮ ========')
     for i in range(len(menu)):
         print(f'\t{i + 1}. {menu[i]}')
@@ -39,5 +45,10 @@ def print_info(message: str):
     print(message)
 
 
+def print_new_contact():
+    print('------- НОВЫЙ КОНТАКТ ---------')
+
+
 def print_exit():
-    print('Телефонный справочник закрыт')
+    print(Fore.RED + 'Телефонный справочник закрыт')
+    print(Style.RESET_ALL)

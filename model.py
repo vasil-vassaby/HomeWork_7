@@ -1,5 +1,3 @@
-import re
-
 phonebook = []
 path = ''
 
@@ -32,20 +30,17 @@ def get_contact(contact_id: int):
 
 def phonebook_open():
     global phonebook
-
     if phonebook:
-        print('Телефонная книга открыта')
         return True
     else:
-        print('Телефонная книга закрыта')
         return False
 
 
-def new_contact(contacts: list):
-    print('------- НОВЫЙ КОНТАКТ ---------')
-    name = input('Введите фамилию и имя: ').title()
-    phone = input('Введите телефон: ')
-    comment = input('Введите комментарий: ')
+def new_contact(contacts: list, name, phone, comment: str):
+    # print('------- НОВЫЙ КОНТАКТ ---------')
+    # name = input('Введите фамилию и имя: ').title()
+    # phone = input('Введите телефон: ')
+    # comment = input('Введите комментарий: ')
     new_con = name + ';' + phone + ';' + comment
     if new_con not in contacts:
         contacts.append(new_con)

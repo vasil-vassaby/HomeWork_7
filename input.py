@@ -1,4 +1,9 @@
+import colorama
+from colorama import Fore, Style
+
 import output
+
+colorama.init()
 
 
 def input_contact_id():
@@ -7,12 +12,29 @@ def input_contact_id():
             contact_id = int(input('Введите ID контакта: '))
             return contact_id
         except ValueError:
-            output.print_error('Введите целое число!')
+            output.print_error(Fore.RED + 'Введите целое число!')
+            print(Style.RESET_ALL)
 
 
 def input_command():
     user = int(input('Введите команду: '))
     return user
+
+
+def input_name():
+    name = input('Введите фамилию и имя: ').strip().title()
+    return name
+
+
+def input_phone():
+    phone = input('Введите телефон: ').strip()
+    if phone.isdigit():
+        return phone
+
+
+def input_comment():
+    comment = input('Введите комментарий: ').strip()
+    return comment
 
 
 def save_contact():
