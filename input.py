@@ -23,7 +23,8 @@ def input_command():
 
 def input_name():
     name = input('Введите фамилию и имя: ').strip().title()
-    return name
+    if not name.isdigit():
+        return name
 
 
 def input_phone():
@@ -38,12 +39,18 @@ def input_comment():
 
 
 def save_contact():
-    return input('Сохранить контакт в телефонный справочник? да/нет >>>')
+    return input('Сохранить контакт в телефонный справочник? да/нет >>> ')
 
 
 def remove_contact():
-    return input('Удалить контакт из телефонного справочника? да/нет >>>')
+    return input('Удалить контакт из телефонного справочника? да/нет >>> ')
 
 
 def change_contact():
-    return input('Изменить контакт из телефонного справочника? да/нет >>>')
+    return input('Изменить контакт в телефонном справочнике? да/нет >>> ')
+
+
+def user_input(message: str):
+    user_inp = input(message)
+    if not user_inp.isdigit():
+        return user_inp

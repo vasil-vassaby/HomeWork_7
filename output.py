@@ -49,6 +49,14 @@ def print_new_contact():
     print('------- НОВЫЙ КОНТАКТ ---------')
 
 
+def print_remove_contact():
+    print('------- УДАЛЕНИЕ КОНТАКТА ---------')
+
+
+def print_change_contact():
+    print('------- ИЗМЕНЕНИЕ КОНТАКТА ---------')
+
+
 def print_exit():
     print(Fore.RED + 'Телефонный справочник закрыт')
     print(Style.RESET_ALL)
